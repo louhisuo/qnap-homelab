@@ -3,7 +3,7 @@ A brief guide how to create usable Ubuntu server base image on QNAP Virtualizati
 Ubuntu 18.04 LTS on QNAP firmware release 4.4.1 w/ Virtualization Station 3.
 
 ---
-Download Ubuntu Server iso image from https://ubuntu.com/download/server and create a VM with Virtualization Station 3.
+Download Ubuntu Server iso image from https://ubuntu.com/download/server and create a VM with Virtualization Station 3.  
 Note: Check Ubuntu Minimal (https://wiki.ubuntu.com/Minimal) in future. 
 
 ---
@@ -12,8 +12,8 @@ $ sudo apt update
 $ sudo apt upgrade
 
 ---
-Check that SSH packagge was installed and SSH daeemon is running
-$ apt show ssh
+Check that SSH packagge was installed and SSH daeemon is running  
+$ apt show ssh  
 $ systemctl status sshd
 
 ---
