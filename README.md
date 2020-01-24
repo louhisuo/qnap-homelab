@@ -7,8 +7,8 @@ Download Ubuntu Server iso image from https://ubuntu.com/download/server and cre
 Note: Check Ubuntu Minimal (https://wiki.ubuntu.com/Minimal) in future. 
 
 ---
-Update packages within VM
-$ sudo apt update
+Update packages within VM  
+$ sudo apt update  
 $ sudo apt upgrade
 
 ---
