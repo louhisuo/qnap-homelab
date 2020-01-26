@@ -1,13 +1,9 @@
 # Installing Docker CE on Ubuntu 18.04 LTS server
 A short instruction how I make a clean installation of Docker CE and Docker Compose for my docker and kubernetes homelabs. See references section for inspiration and sources of know-how that have used to create this simple guide.  
 
-(1) Remove old docker versions including their configuration files, in case any previous docker packages exist.  
+(1) Remove any old docker versions including their configuration files. Also remove any previous images, containers, volumes, or customized configuration files. So if unsure, do not remove '/var/lib/docker' and use 'remove' apt option instead of 'purge'.
 
     $ sudo apt purge docker docker-engine docker.io containerd runc docker-compose  
-
-    Remove any previous images, containers, volumes, or customized configuration files (optional step).  
-    Have not tested myself, but 'purge' may wipe content of /var/lib/docker. So if unsure, use 'remove' in above step.  
-    This step is to make sure nothing old is left behind.  
     $ sudo rm -rf /var/lib/docker
 
 (2) Setup the official Docker CE repository (stable) for package management  
