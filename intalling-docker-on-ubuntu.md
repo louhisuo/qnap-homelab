@@ -18,18 +18,18 @@ Install the latest office Docker CE package
 
     $ sudo apt install docker-ce docker-ce-cli containerd.io  
     
-Install the latest Docker Compose package (optional step)
-
-    $ sudo apt install docker-compose  
-    
-Simple validation of your Docker installation
+Validate Docker CE installation
 
     $ sudo systemctl is-enabled docker.service  
     $ sudo docker version
     $ sudo docker info
-    $ sudo docker-compose version
     $ sudo docker run hello-world
 
+Optional step: Install the latest Docker Compose package
+
+    $ sudo apt install docker-compose
+    $ sudo docker-compose version
+    
 ---
 References:  
 https://fabianlee.org/2019/09/28/docker-installing-docker-ce-on-ubuntu-bionic-18-04/  
