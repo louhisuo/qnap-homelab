@@ -25,6 +25,12 @@ Generate new Machine ID for cloned VM
     $ sudo dbus-uuidgen --ensure
     $ sudo cp /var/lib/dbus/machine-id /etc/.
 
+Check that product_uuid / system-id is unique for the cloned VM (it is also visible as UUID in QNAP Virtualization Station GUI). 
+Every VM should have unique UUID, otherwise something unexpected may happen.
+
+    $ sudo cat /sys/class/dmi/id/product_uuid
+    $ sudo dmidecode -i system-id
+
 Reinitialize SSH host keys.
 
     $ sudo rm /etc/ssh/ssh_host_*
@@ -34,6 +40,11 @@ Flush IP address (and MAC address) within the cloned VM.
 
     $ sudo ip address flush scope global
     $ sudo dhclient -v
+
+Check that cloned VM has an unque IP and MAC address
+
+    $ sudo ip address
+    $ sudo ip link
 
 Reboot the cloned VM
 
