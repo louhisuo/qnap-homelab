@@ -21,7 +21,7 @@ If needed (iptables version is > 1.8) configure iptables to use its legacy backe
 
 Install container runtime
 ---
-See https://../intalling-docker-on-ubuntu.md
+https://../intalling-docker-on-ubuntu.md
 
 ---
 References:  
