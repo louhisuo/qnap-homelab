@@ -1,8 +1,8 @@
 # Installing Kubernetes with Kubeadm
 Step-by-step guide to install three node (1 x Master and 2 x Workers) k8s cluster on Ubuntu 18.04 LTS based VMs.
----
-Configure prerequisites for k8s and kubeadm in all VMs.
 
+Configure prerequisites for k8s and kubeadm in all VMs.
+---
 Disable swap (required by k8s)
 
     $ sudo swapoff --all
