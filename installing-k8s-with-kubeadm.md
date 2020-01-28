@@ -19,9 +19,11 @@ If needed (iptables version is > 1.8) configure iptables to use its legacy backe
     $ sudo update-alternatives --set arptables /usr/sbin/arptables-legacy
     $ sudo update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
-
+Install container runtime
 ---
-References:
+See https://../
+---
+References:  
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/  
 https://k8s-school.fr/resources/en/blog/kubeadm/  
 https://www.codeproject.com/Articles/5065989/3-Nodes-Kubernetes-Cluster-for-Home-Lab-Quick-Dirt  
