@@ -1,5 +1,6 @@
 # Installing Kubernetes with Kubeadm
-Step-by-step guide to install three node (1 x Master and 2 x Workers) k8s cluster on Ubuntu 18.04 LTS based VMs.
+Step-by-step guide to install three node (1 x Master and 2 x Workers) k8s cluster on Ubuntu 18.04 LTS based VMs.  
+It is assumed that you have preparated VMs required for k8s installation and installed a container runtime. All commands below should be executed in all nodes, unless stated otherwise.
 
 Configure prerequisites for k8s and kubeadm in all VMs.
 ---
@@ -19,9 +20,26 @@ If needed (iptables version is > 1.8) configure iptables to use its legacy backe
     $ sudo update-alternatives --set arptables /usr/sbin/arptables-legacy
     $ sudo update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
-Install container runtime
+Install k8s packages
 ---
-https://../intalling-docker-on-ubuntu.md
+Setup the official kubernetes package repository
+
+    $ curl -s https://apt.kubernetes.io/doc/apt-key.gpg | sudo apt-key add -
+    $ sudo add-apt-repository "deb https://apt.kubernetes.io/ kubernetes-xenial main"
+
+Install kubeadm, kubectl and kubelet
+
+    $ sudo apt install kubeadm kubectl kubelet
+    $ sudo apt-mark hold kubeadm kubectl kubelet
+
+Restart kubelet service
+
+    $ sudo systemctl daemon-reload
+    $ sudo systemctl restart kubelet
+
+Initialize k8s control plane
+
+    $ sudo kubeadm init
 
 ---
 References:  
