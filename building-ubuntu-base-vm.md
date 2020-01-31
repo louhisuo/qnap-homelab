@@ -29,7 +29,30 @@ Reboot
 
     $ sudo reboot
 
-Update 
+Update packages within VM
+
+    $ sudo apt update
+    $ sudo apt list --upgradable
+    $ sudo apt upgrade
+    $ sudo apt auto-remove
+
+Install VM helper tools (qemu-guest-agent) to make it possible for host to communicate with guest VM e.g. to obtain IP address and show it in QNAP Virtualization Station.
+    
+    $ sudo apt install qemu-guest-agent
+
+Print Machine ID (to be used as an DHCP Client Identifier) and use it to configure an entry in DHCP server.
+
+    $ hostnamectl
+    or
+    $ cat /etc/machine-id
+    
+
+Reboot (to finalize base image configuration)
+
+    $ sudo reboot
+
+Create VM (Ubuntu Minimal cloud image)
+---
 
 References:  
 https://ubuntu.com/download/server  
@@ -39,6 +62,8 @@ https://www.howtoforge.com/tutorial/ubuntu-lts-minimal-server/
 https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-change-an-ubuntu-18-04-server-hostname/  
 https://help.ubuntu.com/community/RootSudo  
 https://wiki.debian.org/MachineId  
+https://wiki.qemu.org/Features/GuestAgent
+
 
 TO-DO:
 Build downscaled, cloud optimized base image from Ubuntu Minimal (https://wiki.ubuntu.com/Minimal).
