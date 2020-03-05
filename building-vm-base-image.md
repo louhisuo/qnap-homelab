@@ -72,6 +72,8 @@ https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-change-an-u
 https://help.ubuntu.com/community/RootSudo  
 https://wiki.debian.org/MachineId  
 https://wiki.qemu.org/Features/GuestAgent  
+http://manpages.ubuntu.com/  
+https://www.howtoforge.com/how-to-manage-packages-with-apt-on-ubuntu/  
 
 
 TO-DO #1:
