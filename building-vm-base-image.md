@@ -40,7 +40,6 @@ Update packages within VM to the latest versions
     $ sudo apt upgrade
 
 Install VM helper tools (qemu-guest-agent) to make it possible for host to communicate with guest VM e.g. to obtain IP address and show it in QNAP Virtualization Station.  
-TO-DO: Study if anything needs to be installed from QNAP guest-tools.iso. It is distributed as part of Virtualization Station package for QNAP and its location can be found within QNAP with command 'find / -name guest_tools.iso'
     
     $ sudo apt install qemu-guest-agent
 
@@ -73,11 +72,15 @@ https://help.ubuntu.com/community/RootSudo
 https://wiki.debian.org/MachineId  
 https://wiki.qemu.org/Features/GuestAgent  
 
-TO DO #1:
+TO-DO #1:
+---
+Study if anything needs to be installed from QNAP guest-tools.iso. It is distributed as part of Virtualization Station package for QNAP and its location can be found within QNAP with command 'find / -name guest_tools.iso'
+
+TO DO #2:
 ---
 Study how DUID is used as dhcp-client-identifier / Client-ID in DHCP queries and is there a convinient command to print it. Machine-ID which can be printed using 'hostnamectl' or 'cat /etc/machine-id' seems to be used to construct DUID.
 
-TO DO #2:
+TO DO #3:
 ---
 Build downscaled, cloud optimized base image from Ubuntu Minimal (https://wiki.ubuntu.com/Minimal).  
 Parked for timebeing. Deploying Ubuntu Minimal requires converting .img to able to use it within QNAP Virtualization Station. Need to work with toolchain and environment as conversion tools are not natively available for QNAP.
