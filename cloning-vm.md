@@ -5,23 +5,25 @@ I use these steps to prepare cloned Ubuntu Server 18.04 LTS based VM images (my 
 
 If you clone your production VM, just make sure that you keep it paused or shutdown until you have executed steps below otherwise you may experience hostname, IP address, MAC address duplications and SSH troubles.
     
-Change hostname within a cloned VM '/etc/hostname' file
+Change hostname within a cloned VM '/etc/hostname' file. Optionally change icon name.
 
     $ hostnamectl status
     $ sudo hostnamectl set-hostname <new-hostname>
+    $ sudo hostnamectl set-icon-name <new-icon-name>
     
 Change hostname within a cloned VM '/etc/hosts' file and also check '/etc/cloud/cloud.cfg' for its hostname setting.
 
-    $ sed -i 's/\b<old-name>\b/<new-name>/g' /etc/hosts
+    $ cat /etc/hosts
+    $ sudo sed -i 's/\b<old-name>\b/<new-name>/g' /etc/hosts
 
-or alternatively make a change with your favorite text editor
+Generate new Machine ID for a cloned VM
 
-    $ sudo nano /etc/hosts
-
-Generate new Machine ID for cloned VM
-
+    $ cat /etc/machine-id
+    $ cat /var/lib/dbus/machine-id
+    
     $ sudo rm /etc/machine-id 
     $ sudo rm /var/lib/dbus/machine-id
+    
     $ sudo dbus-uuidgen --ensure
     $ sudo cp /var/lib/dbus/machine-id /etc/.
 
@@ -29,30 +31,30 @@ Check that product_uuid / system-id is unique for the cloned VM (it is also visi
 Every VM should have unique UUID, otherwise something unexpected may happen.
 
     $ sudo cat /sys/class/dmi/id/product_uuid
-    $ sudo dmidecode -i system-id
+    $ sudo dmidecode -t system
 
 Reinitialize SSH host keys.
 
     $ sudo rm /etc/ssh/ssh_host_*
     $ sudo dpkg-reconfigure openssh-server
     
-Flush IP address (and MAC address) within the cloned VM.
+Flush IP address (and MAC address) within the cloned VM. Execute these steps within console, as they lead reset of SSH session.
 
     $ sudo ip address flush scope global
     $ sudo dhclient -v
 
-Check that cloned VM has an unque IP and MAC address
+Note MAC address of a cloned VM and configure fixed MAC to IP address mapping on DHCP server.
 
-    $ sudo ip address
-    $ sudo ip link
+    $ ip address
+    $ ip link
 
-Reboot the cloned VM
+Reboot a cloned VM.
 
     $ sudo reboot
     
 Optional steps
 ---
-Check and resize virtual disc / lvm logical volume / filesystem according to application requirements. Inc I currently assign 32 GB virtual disk and out from that LVM seems to allocate 4 GB for '/' (>70% in-use).
+Check and resize virtual disc / lvm logical volume / filesystem according to application requirements. I currently assign 32 GB virtual disk for my base image and out from that LVM seems to allocate 4 GB for logical volume, leading >70% utilization of filesystem.
 
     # Check volume and filesystem sizes
     $ lsblk
@@ -72,3 +74,7 @@ References:
 https://linuxhandbook.com/linux-list-disks/  
 http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html  
 http://www.microhowto.info/howto/increase_the_size_of_an_ext2_ext3_or_ext4_filesystem.html
+
+TO-DO:
+---
+Add missing references, as VM cloning "things to consider" was research from multiple sources.
