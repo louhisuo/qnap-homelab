@@ -85,8 +85,7 @@ TO DO #3:
 Build downscaled, cloud optimized base image from Ubuntu Minimal (https://wiki.ubuntu.com/Minimal).  
 Parked for timebeing. Deploying Ubuntu Minimal requires converting .img to able to use it within QNAP Virtualization Station. Need to work with toolchain and environment as conversion tools are not natively available for QNAP.
 
-Create VM (Ubuntu Minimal cloud image)
----
+Create VM (Ubuntu Minimal cloud image)  
 Download Ubuntu Minimal 18.04 LTS image from (choose .img file)
 
     http://cloud-images.ubuntu.com/minimal/releases/bionic/release/
