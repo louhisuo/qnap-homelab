@@ -7,13 +7,15 @@ Download Ubuntu server iso-image from
 
     https://ubuntu.com/download/server
 
-Create VM by using QNAP Virtualization Station. In 'Create VM' window use following settings  
-- CPU Cores: 2  
-- Memory: 2 GB  
-- HDD Storage: 32 GB  
+Create VM by using QNAP Virtualization Station. In 'Create VM' window use following settings (to be adjusted in future) 
 
-During installation, pay attention to following  
-- Disc partitioning: Choose entire disc and use LVM  
+    - CPU Cores: 2  
+    - Memory: 2 GB  
+    - HDD Storage: 32 GB  
+
+During installation, pay attention to following (Important! Virtual disk, logical volume and filesystem resizing procedures are based on this assumption (for details, see https://./cloning-vm.md) 
+
+    - Disc partitioning: Choose entire disc and use LVM  
 
 Set hostname for the base image VM (/etc/hostname and /etc/hosts)
 
