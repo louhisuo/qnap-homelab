@@ -20,8 +20,6 @@ Set hostname for the base image VM (/etc/hostname and /etc/hosts)
     $ hostnamectl
     $ sudo hostnamectl set-hostname <new-hostname>
     $ sudo sed -i 's/\b<old-hostname>\b/<new-hostname>/g' /etc/hosts
-    or
-    $ sudo nano /etc/hosts
 
 Make hostname change persistant by changing 'preserve_hostname' from 'false' to 'true'  
 
