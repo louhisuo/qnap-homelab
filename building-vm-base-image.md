@@ -38,6 +38,7 @@ Update packages within VM to the latest versions
     $ sudo apt update
     $ sudo apt list --upgradable
     $ sudo apt upgrade
+    $ sudo apt autoremove
 
 Install VM helper tools (qemu-guest-agent) to make it possible for host to communicate with guest VM e.g. to obtain IP address and show it in QNAP Virtualization Station.  
     
