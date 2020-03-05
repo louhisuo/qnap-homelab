@@ -43,7 +43,7 @@ Install VM helper tools (qemu-guest-agent) to make it possible for host to commu
     
     $ sudo apt install qemu-guest-agent
 
-Print a system boot-up statistic and optimize boot-up time
+Print a system boot-up statistic and optimize boot-up time (nothing really done ... yet ... for TO-DO)
 
     $ systemd-analyze blame
 
