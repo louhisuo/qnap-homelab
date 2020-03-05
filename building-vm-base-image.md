@@ -13,7 +13,7 @@ Create VM by using QNAP Virtualization Station. In 'Create VM' window use follow
     - Memory: 2 GB  
     - HDD Storage: 32 GB  
 
-During installation, pay attention to following (Important! Virtual disk, logical volume and filesystem resizing procedures are based on this assumption (for details, see https://./cloning-vm.md) 
+During installation, pay attention to following (Important! Virtual disk, logical volume and filesystem resizing procedures during VM cloning are based on this assumption.
 
     - Disc partitioning: Choose entire disc and use LVM  
 
