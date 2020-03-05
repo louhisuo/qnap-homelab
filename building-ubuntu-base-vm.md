@@ -1,5 +1,5 @@
 # Building Ubuntu Server base image Virtual Machine (VM)
-Rough guide to build Ubuntu 18.04 LTS server based VM base image for various homelab purposes. Homelabs are running on QNAP Virtualization Station 3 based on QTS 4.4.1 firmware.
+My rough guide to build Ubuntu 18.04 LTS server based VM base image for various homelabs which are running on QNAP (currently on Virtualization Station 3 based on QTS 4.4.1 firmware).
 
 Create VM (Ubuntu Server)
 ---
@@ -45,7 +45,6 @@ TO-DO: Study if anything needs to be installed from QNAP guest-tools.iso. It is 
 Print a system boot-up statistic and optimize boot-up time
 
     $ systemd-analyze blame
-    
 
 Clean up unused packages
 
@@ -54,14 +53,12 @@ Clean up unused packages
 Finalize the VM base image
 ---
 Print MAC address, to be used to configure fixed IP address mapping in DHCP server.  
-TO-DO: Study how DUID is used as dhcp-client-identifier / Client-ID in DHCP queries and is there a convinient command to print it. Machine-ID which can be printed using 'hostnamectl' or 'cat /etc/machine-id' seems to be used to construct DUID.
 
     $ ip address    
 
 Reboot (to finalize base image configuration)
 
     $ sudo reboot
-
 
 
 References:  
@@ -73,6 +70,15 @@ https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-change-an-u
 https://help.ubuntu.com/community/RootSudo  
 https://wiki.debian.org/MachineId  
 https://wiki.qemu.org/Features/GuestAgent  
+
+TO DO #1:
+---
+Study how DUID is used as dhcp-client-identifier / Client-ID in DHCP queries and is there a convinient command to print it. Machine-ID which can be printed using 'hostnamectl' or 'cat /etc/machine-id' seems to be used to construct DUID.
+
+TO DO #2:
+---
+Build downscaled, cloud optimized base image from Ubuntu Minimal (https://wiki.ubuntu.com/Minimal).  
+Parked for timebeing. Deploying Ubuntu Minimal requires converting .img to able to use it within QNAP Virtualization Station. Need to work with toolchain and environment as conversion tools are not natively available for QNAP.
 
 Create VM (Ubuntu Minimal cloud image)
 ---
@@ -87,13 +93,8 @@ Create VM by using QNAP Virtualization Station. In 'Create VM' window use follow
 - HDD Location: Choose 'Use existing image' and point location to downloaded .img file.
 - Network: Choose virtual switch available.
 
-Parked for timebeing. Deploying Ubuntu Minimal requires converting .img to able to use it within QNAP Virtualization Station.
 
 References:  
 https://wiki.ubuntu.com/Minimal  
 http://cloud-images.ubuntu.com/minimal/  
-
-TO-DO:
----
-Build downscaled, cloud optimized base image from Ubuntu Minimal (https://wiki.ubuntu.com/Minimal).
     
