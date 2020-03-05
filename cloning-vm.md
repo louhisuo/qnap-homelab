@@ -1,7 +1,7 @@
 # Cloning Virtual Machine from its Base image
 This short instruction that covers list of things needs to be considered or changed within the newly cloned VM before it can taken into use i.e to make sure it gets its own unique identity and do not mess up a production environment. 
 
-I use these steps to prepare cloned Ubuntu Server 18.04 LTS based VM images (my current base image) for various personal projects and homelabs. I keep my base image is normally shutdown, except for updates or base image optimizations. I use QNAP Virtualization Station GUI to make a VM clone from a base image and execute following steps in the cloned VM console before installing any applications into the cloned VM.
+I use these steps to prepare cloned Ubuntu Server 18.04 LTS based VM images (my current base image) for various personal projects and homelabs. I keep my base image is normally shutdown, except for updates, optimizations or rebasing. I use QNAP Virtualization Station (GUI interface) to make a VM clone from a base image and execute following steps in the cloned VM console or SSH to preprare VM for its actual use.
 
 If you clone your production VM, just make sure that you keep it paused or shutdown until you have executed steps below otherwise you may experience hostname, IP address, MAC address duplications and SSH troubles.
     
@@ -50,6 +50,25 @@ Reboot the cloned VM
 
     $ sudo reboot
     
+Optional steps
 ---
+Check and resize virtual disc / lvm logical volume / filesystem according to application requirements. Inc I currently assign 32 GB virtual disk and out from that LVM seems to allocate 4 GB for '/' (>70% in-use).
 
+    # Check volume and filesystem sizes
+    $ lsblk
+    $ df -h
+    $ sudo lvdisplay -v /dev/ubuntu-vg/ubuntu-lv
+    
+    # Expanding virtual disc size will be added if needed
+    
+    # Increase LVM logical volume size (lvextend --size +<size-to-be-expanded> <lvm-logical-volume>, reference lsblk or lvdisplay)
+    $ sudo lvextend --size +1G /dev/ubuntu-vg/ubuntu-lv
+
+    # Increase filesystem size (resize2fs <filesystem>, reference df-h)
+    $ sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+    
+    
 References:
+https://linuxhandbook.com/linux-list-disks/  
+http://www.microhowto.info/howto/increase_the_size_of_an_lvm_logical_volume.html  
+http://www.microhowto.info/howto/increase_the_size_of_an_ext2_ext3_or_ext4_filesystem.html
