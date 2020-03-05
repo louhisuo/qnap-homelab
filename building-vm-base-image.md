@@ -3,7 +3,9 @@ My rough guide to build Ubuntu 18.04 LTS server based VM base image for various 
 
 Create VM (Ubuntu Server)
 ---
-Download Ubuntu server iso-image from https://ubuntu.com/download/server
+Download Ubuntu server iso-image from 
+
+    https://ubuntu.com/download/server
 
 Create VM by using QNAP Virtualization Station. In 'Create VM' window use following settings  
 - CPU Cores: 2  
