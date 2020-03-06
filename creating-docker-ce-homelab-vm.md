@@ -41,6 +41,9 @@ Manage Docker as a non-root user. Create a Docker group and add a user into the 
     $ sudo usermod -aG docker $USER
     $ newgrp docker
 
+Finetune install to make it possible to use 'docker login' without X11/Gnome by providing pass service for a package 'golang-docker-credential-helpers'. This is needed perhaps due to a missing dependency? Note that a password will be stored as clear text (to be fixed someday ...). 
+
+    $ sudo apt install pass
 
 Optional steps
 ---
