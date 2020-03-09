@@ -47,10 +47,14 @@ Finetune install to make it possible to use 'docker login' without X11/Gnome by 
 
 Optional steps
 ---
-Install Docker Compose
+Install the latest Docker Compose (the current latest version is 1.25.4) directly from the official Docker repository.
 
-    $ sudo apt install docker-compose
-    $ sudo docker-compose version
+    $ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" \
+      -o /usr/local/bin/docker-compose
+    $ sudo chmod +x /usr/local/bin/docker-compose
+    $ sudo curl -L https://raw.githubusercontent.com/docker/compose/1.25.4/contrib/completion/bash/docker-compose -o \         
+      /etc/bash_completion.d/docker-compose
+    $ docker-compose version
 
 
 References: 
@@ -59,6 +63,7 @@ https://fabianlee.org/2019/09/28/docker-installing-docker-ce-on-ubuntu-bionic-18
 https://docs.docker.com/install/linux/docker-ce/ubuntu/  
 https://docs.docker.com/install/linux/linux-postinstall/  
 https://www.tecmint.com/install-docker-and-run-docker-containers-in-ubuntu/  
+https://docs.docker.com/compose/install/
 
 
 TO-DO:
