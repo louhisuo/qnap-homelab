@@ -47,7 +47,7 @@ Finetune install to make it possible to use 'docker login' without X11/Gnome by 
 
 Optional steps
 ---
-Install the latest Docker Compose (the current latest version is 1.25.4) directly from the official Docker repository.
+Install the latest Docker Compose (the current latest version is 1.25.4) directly from the official Docker repository. Note that command completion reguires you to start a new bash session to take effect.
 
     $ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" \
       -o /usr/local/bin/docker-compose
