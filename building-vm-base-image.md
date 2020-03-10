@@ -38,11 +38,14 @@ Update packages within VM to the latest versions
     $ sudo apt update
     $ sudo apt list --upgradable
     $ sudo apt upgrade
-    $ sudo apt autoremove
 
 Install VM helper tools (qemu-guest-agent) to make it possible for host to communicate with guest VM e.g. to obtain IP address and show it in QNAP Virtualization Station.  
     
     $ sudo apt install qemu-guest-agent
+
+Install bridge-utils to manage bridge devices.
+
+    $ sudo apt install bridge-utils
 
 Print a system boot-up statistic and optimize boot-up time (nothing really done ... yet ... for TO-DO)
 
