@@ -50,6 +50,11 @@ Install bridge-utils to manage bridge devices.
 Print a system boot-up statistic and optimize boot-up time (nothing really done ... yet ... for TO-DO)
 
     $ systemd-analyze blame
+    
+    # Remove snap service
+    $ sudo rm -rf /var/cache/snapd/  
+    $ sudo apt autoremove --purge gnome-software-plugin-snap snapd snap  
+    $ rm -fr ~/snap
 
 Clean up unused packages
 
