@@ -1,0 +1,17 @@
+version: '2.3'
+
+services:
+  makemkv:
+    image: jlesage/makemkv:latest
+    ports:
+      - :5800
+    volumes:
+      - :/config
+      - /share/Data:/storage:ro
+      - /share/Data:/output:rw
+    environment:
+      - USER_ID=1002
+      - GROUP_ID=1002
+      - UMASK=022
+      - TZ=Europe/Amsterdam
+      - ENABLE_CJK_FONT=1
