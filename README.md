@@ -9,16 +9,20 @@ So far all VM images are baselined to Ubuntu 18.04 LTS Server ... simply because
 
 About containers (and docker-compose files):
 ---
-**Portainer CE**  
+**[Portainer CE](https://portainer.io)**  
 This is my choise as a Container Manager in QNAP environment. 
 
 How to deploy using 'portainer-docker-compose.yaml' file:  
 In QNAP WebUI Open 'Container Station' -> click 'Create' -> click '+Create Application' (top right corner of 'Create' page) and paste yaml-file content into the 'Create Application' editor window. To deploy the container type name of application to 'Application name' field -> click 'Validate YAML' (optional but always useful) -> and click 'Create'. As the result 'portainer' should be running and you may create and manager other containers via portainer.  
 
-Note: I am well aware that mounting '/var/run/docker.sock' is security risk but in my closed environment I consider that risk managable.
+Accessing portainer WebUI: http://<HOST IP ADDR>:9000
 
-For more information:  
-- https://www.portainer.io/
+Notes related to 'portainer-docker-compose.yaml': 
+- I use 'host' networking for portainer, as I want to have portainer accessable from same IP address than my NAS WebUI
+- Only port 9000 for portainer WebUI
+- I am well aware that mounting '/var/run/docker.sock' is security risk but in my closed environment I consider that risk managable.
+
+
 
 TO DO:
 ---
