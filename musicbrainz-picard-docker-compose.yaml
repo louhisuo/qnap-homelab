@@ -1,0 +1,17 @@
+version: '2.3'
+
+services:
+  musicbrainz-picard:
+    image: mikenye/picard:latest
+    ports:
+      - :5800
+    volumes:
+      - :/config
+      - /share/Data:/storage:rw
+    environment:
+      - USER_ID=1002
+      - GROUP_ID=1002
+      - UMASK=022
+      - TZ=Europe/Stockholm
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=900
