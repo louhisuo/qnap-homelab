@@ -19,7 +19,7 @@ Accessing portainer WebUI: [http://nas-webui-ip-addr:9000](http://nas-webui-ip-a
 
 Notes related to 'portainer-docker-compose.yaml': 
 - I use 'host' networking for portainer, as I want to have portainer accessable from same IP address than my NAS WebUI
-- Only port 9000 for portainer WebUI
+- Only port 9000 is exposed and mapped for portainer WebUI
 - I am well aware that mounting '/var/run/docker.sock' is security risk but in my closed environment I consider that risk managable.
 
 
