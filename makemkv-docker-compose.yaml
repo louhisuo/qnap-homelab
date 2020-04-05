@@ -4,7 +4,7 @@ services:
   makemkv:
     image: jlesage/makemkv:latest
     ports:
-      - :5800
+      - ":5800"
     volumes:
       - :/config
       - /share/Data:/storage:ro
@@ -15,3 +15,5 @@ services:
       - UMASK=022
       - TZ=Europe/Amsterdam
       - ENABLE_CJK_FONT=1
+      - DISPLAY_WIDTH=1920
+      - DISPLAY_HEIGHT=900
