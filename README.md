@@ -15,6 +15,10 @@ This is my choise as a Container Manager in QNAP environment.
 How to deploy using 'portainer-docker-compose.yaml' file:  
 In QNAP WebUI Open 'Container Station' -> click 'Create' -> click '+Create Application' (top right corner of 'Create' page) and paste yaml-file content into the 'Create Application' editor window. To deploy the container type name of application to 'Application name' field -> click 'Validate YAML' (optional but always useful) -> and click 'Create'. As the result 'portainer' should be running and you may create and manager other containers via portainer.  
 
+Post installation steps:
+- Create admin user as part of the first login
+- Define 'Public IP' under Settings -> Endpoints -> primary (name of endpoint which was created)
+
 Accessing portainer WebUI: [http://nas-webui-ip-addr:9000](http://nas-webui-ip-addr:9000)
 
 Notes related to 'portainer-docker-compose.yaml': 
