@@ -39,7 +39,15 @@ Create a 'cloud-config.yaml' for RancherOS base image VM (example below) in your
     hostname: rancheros-base
     ssh_authorized_keys:
       - <copy here your 'id_rsa.pub'content you generated in previous step>
+    mounts:
+      - <nfs-server-ip>:/rancheros
+      - /storage
+      - nfs4
+      - ""
     rancher:
+      services_include:
+        qemu-guest-agent: true
+        volume-nfs: true
       network:
         interfaces:
           eth0:
@@ -83,6 +91,11 @@ Enable VM helper tools (qemu-guest-agent) on VM
     $ sudo ros service enable qemu-guest-agent
     $ sudo ros service up qemu-guest-agent
 
+Enable NFS service
+
+    $ sudo ros service list
+    $ sudo ros service enable volume-nfs
+    $ sudo ros service up volume-nfs
 
 References:
 - https://rancher.com/rancher-os/  
