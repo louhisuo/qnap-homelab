@@ -89,3 +89,5 @@ References:
 - https://rancher.com/docs/os/v1.x/en/overview/  
 - https://github.com/rancher/os/blob/master/README.md  
 - https://linuxhint.com/install_rancher_os/  
+- https://distrowatch.com/table.php?distribution=rancheros  
+- https://vitobotta.com/2019/06/25/setting-up-rancheros-for-rancher-and-kubernetes/  
